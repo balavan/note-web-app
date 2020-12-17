@@ -1,0 +1,22 @@
+ <button (click)="addNote()">ADD New Note</button>
+ <table class="table" style="width:100%;" border="1" cellspacing="0" cellpadding="2">
+   <thead>
+     <tr>
+       <th>Sl No</th>
+       <th>Header</th>
+       <th> Created Date</th>
+       <th> Selected Date</th>
+       <th>Details</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let list of displayData; let i = index">
+       <td data-label="Plans Id">{{ i+1 }}</td>
+       <td>{{list.header}}</td>
+       <td>{{list.createdDate | date}}</td>
+       <td>{{list.date | date}}</td>
+       <td>
+         <button (click)="routingToNxtCmp(list._id)">UPDATE</button></td>
+     </tr>
+   </tbody>
+ </table>
